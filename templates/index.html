@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Internship Eligibility Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Smart Internship Eligibility Predictor</h2>
+
+        <form action="/predict" method="post">
+
+            <label>CGPA</label>
+            <input type="number" step="0.01" name="cgpa" required>
+
+            <label>Coding Skills (1–10)</label>
+            <input type="number" name="coding" min="1" max="10" required>
+
+            <label>Projects Completed</label>
+            <input type="number" name="projects" required>
+
+            <label>Previous Internship (0 = No, 1 = Yes)</label>
+            <input type="number" name="internship" min="0" max="1" required>
+
+            <label>Certifications</label>
+            <input type="number" name="certifications" required>
+
+            <label>Communication Skills (1–10)</label>
+            <input type="number" name="communication" min="1" max="10" required>
+
+            <label>Attendance (%)</label>
+            <input type="number" name="attendance" min="0" max="100" required>
+
+            <button type="submit">Predict Eligibility</button>
+        </form>
+    </div>
+</body>
+</html>
